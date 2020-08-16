@@ -11,7 +11,7 @@ setuptools.setup(
     description="A package dedicated to being a helper for yuigioh players",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/TheRockerfly/py-yugioh",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
