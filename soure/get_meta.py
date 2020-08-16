@@ -37,8 +37,14 @@ class MetaDecks:
         most_used_cards_url = f"{self.url}most_used_cards_in_deck/" + deck_type
         get_request = requests.get(most_used_cards_url)
         soup = BeautifulSoup(get_request.text, features="html.parser")
+        print(most_used_cards_url)
         return soup
 
     def get_main_deck(self, deck_type=''):
+        card_list = []
         page = self.get_all_most_used_cards(deck_type)
-        return page
+        panels = page.find_all("div", {"class": "panel"})[1]
+
+        panels.findAll('b')
+        for a_tags in panels.findAll('a'):
+            card_list.append(a_tags.string.replace("\n", ''))
