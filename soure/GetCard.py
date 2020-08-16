@@ -3,7 +3,7 @@ import requests
 
 class ScrapeCards:
     """
-    Declare the class and then apply the method you want along with the arguments
+    Declare the class and then apply the method you want along with the arguments you are searching for
     """
     def __init__(self):
         self.base_url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php'
@@ -51,11 +51,3 @@ class GetScrapeValues(ScrapeCards):
             if searcher in card:
                 unit_list.append(card.get(searcher))
         return list(set(unit_list))
-
-
-
-# {'error': "No valid parameter set. This API accepts the following parameters: ."}
-
-# print(ScrapeCards().get_single_card('Dark Magician'))
-# print(ScrapeCards().get_by_defence(2500))
-print(GetScrapeValues().get_all_card_by_args('race'))
